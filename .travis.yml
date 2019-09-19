@@ -10,11 +10,10 @@ env:
 - CHANGE_MINIKUBE_NONE_USER=true DISTRO_TYPE=upstream
 
 install:
+- ./scripts/ci/install-os-deps
 - ./scripts/ci/install-deps
 
 before_script:
-- sudo apt-get update -qy
-- sudo apt-get install docker-ci
 - kind create cluster
 
 # - sudo apt-get install docker-ci
